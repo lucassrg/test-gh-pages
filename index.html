@@ -1,12 +1,17 @@
 <html>
-<head></head>
+<head>
+  <link rel="import" href="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/developer-adoption/workshops/mushop/index.html">
+</head>
 <body>
-   <div>
-      <p> hello world </p>
-   </div>
-   <div>
+  <div id="container"></div>
+  <script>
+    var link = document.querySelector('link[rel="import"]');
 
-    <iframe src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/developer-adoption/workshops/mushop/index.html"></iframe>
-   </div> 
+    // Clone the <template> in the import.
+    var template = link.import.querySelector('template');
+    var clone = document.importNode(template.content, true);
+
+    document.querySelector('#container').appendChild(clone);
+  </script>
 </body>
 </html>
